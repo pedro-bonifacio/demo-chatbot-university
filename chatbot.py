@@ -73,7 +73,7 @@ def show_legal_disclaimer():
         st.session_state['accepted_legal'] = True
         st.rerun()
     elif do_not_proceed:
-        st.warning("You have chosen not to proceed.")
+        st.warning("Escolheu não prosseguir.")
         st.session_state['accepted_legal'] = False
         return
     else:
