@@ -62,8 +62,9 @@ def display_assistant_msg(message: str):
 def show_legal_disclaimer():
     st.title("Legal Disclaimer")
     st.write("This chatbot is for informational purposes only and does not provide legal, financial, or medical "
-             "advice. By proceeding, you acknowledge that any information provided by the chatbot should not be "
-             "considered professional advice and should be used at your own discretion.")
+             "advice. By proceeding, you acknowledge that you are talking to a robot and that any information "
+             "provided by the chatbot should not be considered professional advice and should be used at your own "
+             "discretion.")
 
     proceed = st.button("Proceed")
     do_not_proceed = st.button("Do Not Proceed")
