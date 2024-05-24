@@ -2,18 +2,18 @@ import streamlit as st
 import time
 import random
 
-site_name = "Speed Scapes"
+site_name = "Speedy Scenes"
 
 chatbot_responses = [
-    "Do you need help choosing the perfect car wallpaper for your home?",
-    "Our exclusive NFT car art pieces are one-of-a-kind! Would you like to know more?",
-    "Having trouble with your order? Let me help you with that.",
-    "Looking for a specific type of car wallpaper? I can help you find it!",
-    "Interested in our latest collections? I can show you what's new!",
-    "Need assistance with our NFT marketplace? I can guide you through the process.",
-    f"Thank you for reaching out to {site_name} support chatbot! How can I make your experience better?",
-    "Our wallpapers are designed to enhance any space. Do you have any questions about installation?",
-    "Curious about our special offers and discounts? I can provide you with the latest deals!"
+    "Precisa de ajuda para escolher o papel de parede perfeito para o seu carro?",
+    "Nossas exclusivas peças de arte de carros NFT são únicas! Gostaria de saber mais?",
+    "Está com dificuldades com o seu pedido? Deixe-me ajudá-lo com isso.",
+    "Procurando por um tipo específico de papel de parede de carro? Posso ajudá-lo a encontrar.",
+    "Interessado em nossas últimas coleções? Posso mostrar o que há de novo!",
+    "Precisa de assistência com nosso mercado de NFT? Posso orientá-lo no processo.",
+    f"Obrigado por entrar em contato com o suporte do {site_name} chatbot! Como posso melhorar sua experiência?",
+    "Nossos papéis de parede são projetados para realçar qualquer espaço. Tem alguma dúvida sobre a instalação?",
+    "Curioso sobre nossas ofertas especiais e descontos? Posso fornecer as últimas promoções!"
 ]
 
 
@@ -60,14 +60,11 @@ def display_assistant_msg(message: str):
 
 
 def show_legal_disclaimer():
-    st.title("Legal Disclaimer")
-    st.write("This chatbot is for informational purposes only and does not provide legal, financial, or medical "
-             "advice. By proceeding, you acknowledge that you are talking to a robot and that any information "
-             "provided by the chatbot should not be considered professional advice and should be used at your own "
-             "discretion.")
+    st.title("Aviso Legal")
+    st.write("Este chatbot é apenas para fins informativos e não fornece conselhos legais, financeiros ou médicos. Ao prosseguir, você reconhece que está conversando com um robô e que qualquer informação fornecida pelo chatbot não deve ser considerada como aconselhamento profissional e deve ser usada a seu próprio critério.")
 
-    proceed = st.button("Proceed")
-    do_not_proceed = st.button("Do Not Proceed")
+    proceed = st.button("Confirmar")
+    do_not_proceed = st.button("Recusar")
 
     if proceed:
         st.session_state['accepted_legal'] = True
@@ -81,7 +78,7 @@ def show_legal_disclaimer():
 
 
 def app():
-    st.title(f'🤖 | {site_name} Support Chatbot')
+    st.title(f'🤖 | {site_name} Chatbot de Suporte')
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
@@ -89,12 +86,9 @@ def app():
     display_history_messages()
 
     if not st.session_state.chat_history:
-        display_assistant_msg(message=f"Hello and welcome to {site_name}! 🚗✨ How can we assist you today? Whether "
-                                      "you have questions about our car wallpapers, need help with your NFT "
-                                      "purchases, or anything else, we're here to help. Let's get you on the fast "
-                                      "track to a better experience!")
+        display_assistant_msg(message=f"Olá e bem-vindo ao {site_name}! 🚗✨ Como podemos ajudá-lo hoje? Se você tiver perguntas sobre nossos papéis de parede de carros, precisar de ajuda com suas compras de NFT ou qualquer outra coisa, estamos aqui para ajudar. Vamos colocá-lo na pista rápida para uma melhor experiência!")
 
-    if prompt := st.chat_input("Type your request..."):
+    if prompt := st.chat_input("Escreva a sua pergunta..."):
         # [*] Request & Response #
         display_user_msg(message=prompt)
 
