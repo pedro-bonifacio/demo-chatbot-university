@@ -61,7 +61,10 @@ def display_assistant_msg(message: str):
 
 def show_legal_disclaimer():
     st.title("Aviso Legal")
-    st.write("Este chatbot é apenas para fins informativos e não fornece conselhos legais, financeiros ou médicos. Ao prosseguir, você reconhece que está conversando com um robô e que qualquer informação fornecida pelo chatbot não deve ser considerada como aconselhamento profissional e deve ser usada a seu próprio critério.")
+    st.write("Este chatbot é apenas para fins informativos e não fornece conselhos legais, financeiros ou médicos. Ao "
+             "prosseguir, você reconhece que está conversando com um sistema de inteligência artificial e que "
+             "qualquer informação fornecida pelo chatbot não deve ser considerada como aconselhamento profissional e "
+             "deve ser usada a seu próprio critério.")
 
     proceed = st.button("Confirmar")
     do_not_proceed = st.button("Recusar")
