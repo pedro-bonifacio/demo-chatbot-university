@@ -78,7 +78,7 @@ def show_legal_disclaimer():
 
 
 def app():
-    st.title(f'🤖 | {site_name} Chatbot de Suporte')
+    st.title(f'🤖 | {site_name} Chatbot')
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
